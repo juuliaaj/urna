@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Governador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            text-align: center;
+            background-color: #e6f7ff;
+            border: 2px solid #053747;
+            padding: 30px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #006699;
+            margin-bottom: 20px;
+        }
+
+        #resultado {
+            font-size: 16px;
+            color: #004d66;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #1b305a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005b99;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Resultados - Governador</h1>
+        <div id="resultado"></div>
+        <button onclick="voltar()">Voltar</button>
+    </div>
+
+    <script>
+        function exibirResultados() {
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = ""; 
+
+            const candidatos = {
+                42: "Candidato 42",
+                22: "Candidato 22",
+            };
+
+            let totalVotos = 0;
+            const votosBrancos = parseInt(localStorage.getItem('branco-governador')) || 0;
+            const votosNulos = parseInt(localStorage.getItem('nulo-governador')) || 0;
+
+            for (const numero in candidatos) {
+                const votos = parseInt(localStorage.getItem(numero)) || 0;
+                totalVotos += votos;
+            }
+            totalVotos += votosBrancos;
+            totalVotos += votosNulos;
+
+            for (const numero in candidatos) {
+                const votos = parseInt(localStorage.getItem(numero)) || 0;
+                const porcentagem = totalVotos > 0 ? ((votos / totalVotos) * 100).toFixed(2) : "0.00";
+                resultadoDiv.innerHTML += `${candidatos[numero]}: ${votos} votos (${porcentagem}%)<br>`;
+            }
+
+            const porcentagemBrancos = totalVotos > 0 ? ((votosBrancos / totalVotos) * 100).toFixed(2) : "0.00";
+            resultadoDiv.innerHTML += `<br>Votos em branco: ${votosBrancos} (${porcentagemBrancos}%)`;
+
+            const porcentagemNulos = totalVotos > 0 ? ((votosNulos / totalVotos) * 100).toFixed(2) : "0.00";
+            resultadoDiv.innerHTML += `<br>Votos nulos: ${votosNulos} (${porcentagemNulos}%)`;
+        }
+
+        function voltar() {
+            window.location.href = "presidente.html";
+        }
+
+        window.onload = exibirResultados;
+    </script>
+</body>
+</html>
+

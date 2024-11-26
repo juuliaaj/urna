@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo_urna.css">
+    <title>URNA ELETRÔNICA</title>
+</head>
+<body>
+    <div id="container">
+        <div class="tela">
+            <div id="foto"></div>
+            <div id="foto1">ESCOLHA SEU <br>CANDIDATO</div>
+            <h2 id="nome"></h2>
+
+            <p class="numeroDoCandidato">VEREADOR</p>
+            <div id="conteudo">
+                <div>
+                    <input size="1" type="text" id="campo1" value="" maxlength="1" readonly="readonly"/>
+                </div>
+                <div>
+                    <input size="1" type="text" id="campo2" value="" maxlength="1" readonly="readonly"/>
+                </div>
+                <div>
+                    <input size="1" type="text" id="campo3" value="" maxlength="1" readonly="readonly"/>
+                </div>
+                <div>
+                    <input size="1" type="text" id="campo4" value="" maxlength="1" readonly="readonly"/>
+                </div>
+                <div>
+                    <input size="1" type="text" id="campo5" value="" maxlength="1" readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="justica">
+            <div id="cabecalho-teclado">
+                <img class="brasao" src="img/brasãopng.png" alt="">
+                <span>URNA ELETRÔNICA</span>
+            </div>
+
+            <div class="teclado">
+                <button class="b1" id="bt1" onclick="clicou(1)">1</button>
+                <button class="b1" id="bt2" onclick="clicou(2)">2</button>
+                <button class="b1" id="bt3" onclick="clicou(3)">3</button>
+                <button class="b1" id="bt4" onclick="clicou(4)">4</button>
+                <button class="b1" id="bt5" onclick="clicou(5)">5</button>
+                <button class="b1" id="bt6" onclick="clicou(6)">6</button>
+                <button class="b1" id="bt7" onclick="clicou(7)">7</button>
+                <button class="b1" id="bt8" onclick="clicou(8)">8</button>
+                <button class="b1" id="bt9" onclick="clicou(9)">9</button>
+                <button class="b1" id="bt0" onclick="clicou(0)">0</button>
+
+                <button class="botao-branco" onclick="clicouBranco()">BRANCO</button>
+                <button class="botao-corrige" onclick="clicouCorrige()">CORRIGIR</button>
+                <button class="botao-confirma" onclick="clicouConfirma()">CONFIRMAR</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="som-confirmacao">
+        <source src="audio/som-confirma.mp4" type="audio/mp4">
+    </audio>
+
+    <audio id="som-numeracao">
+        <source src="audio/som-botão.mp4" type="audio/mp4">
+    </audio>
+
+    <script src="js/urna.js"></script>
+</body>
+</html>

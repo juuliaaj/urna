@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.header
+{
+    width: 100%;
+}
+
+.barra-topo
+{
+    width: 100%;
+    height: 35px;
+    background-color: #1b305a;
+}
+
+.logo-da-justica img
+{
+    margin: 5px;
+
+}
+
+hr{
+    margin-top: 5px;
+}
+
+#titulo-votacao
+{
+    text-align: center;
+}
+
+.main
+{
+    padding: 20px;
+}
+
+#titulo-informacoes
+{
+    text-align: center;
+    margin-top: 12px;
+    color: #1b305a;
+}
+
+#titulo-passo
+{
+    padding: 20px 0;
+}
+
+#tutorial-votacao
+{
+    padding-left: 18px;
+}
+
+#tutorial-votacao li
+{
+    padding: 6px 0;
+    text-align: justify;
+}
+
+.titulo-texto
+{
+    padding: 20px 0;
+} 
+
+.texto
+{
+    text-align: justify;
+}
+
+#botao-canditatos
+{
+    margin: 20px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 30px;
+    display: block;
+    margin: 15px auto;
+    font-size: 16px;
+
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.footer
+{
+    width: 100% ;
+    height: 80px;
+    background-color: #1b305a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+
+}
+#tituloCandidatos {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#textoInicio {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#tituloPartido {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.candidatos {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 20px; 
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.candidato {
+    flex: 0 0 30%; 
+    max-width: 30%; 
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.candidato img {
+    width: 280px;
+    border-radius: 4px;
+    height: 280px;
+    object-fit: cover;
+}
+
+h4
+{
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding-top: 15px;
+    }
+
+    #titulo-votacao {
+        font-size: 20px;
+    }
+
+    #titulo-passo,
+    #titulo-importancia,
+    #titulo-historia {
+        font-size: 18px;
+    }
+
+    #tutorial-votacao {
+        font-size: 14px;
+    }
+
+    #botao-canditatos {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #titulo-votacao {
+        font-size: 18px;
+    }
+
+    #titulo-passo,
+    #titulo-importancia,
+    #titulo-historia {
+        font-size: 16px;
+    }
+
+    #tutorial-votacao {
+        font-size: 14px;
+    }
+
+    #botao-canditatos {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .candidato {
+        flex: 0 0 45%; 
+        max-width: 45%;
+    }
+
+    #tituloCandidatos {
+        font-size: 20px;
+    }
+
+    #textoInicio,
+    #tituloPartido {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .candidato {
+        flex: 0 0 100%; 
+        max-width: 100%;
+    }
+
+    #tituloCandidatos {
+        font-size: 18px;
+    }
+
+    #textoInicio,
+    #tituloPartido {
+        font-size: 16px;
+    }
+}
